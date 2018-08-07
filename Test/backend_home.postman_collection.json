@@ -1,0 +1,178 @@
+{
+	"id": "e8d70edd-e943-2078-4768-b462965f77f6",
+	"name": "backend_home",
+	"description": "",
+	"order": [
+		"c3be708e-8e51-2b38-64f7-7925e2bb1963",
+		"e23497ac-0b62-6e58-878e-2853065842dc",
+		"7fb58a8d-d102-74d9-64c6-8c3c8c5cefd6"
+	],
+	"folders": [
+		{
+			"name": "Agreement",
+			"description": "",
+			"collectionId": "e8d70edd-e943-2078-4768-b462965f77f6",
+			"order": [
+				"a4562745-b8ca-02bb-6dfe-7ec5082f00bc"
+			],
+			"owner": "2336260",
+			"folders_order": [],
+			"id": "3879f6cc-f1e5-5444-1f73-325dd3d9d79c"
+		}
+	],
+	"folders_order": [
+		"3879f6cc-f1e5-5444-1f73-325dd3d9d79c"
+	],
+	"timestamp": 1525100679587,
+	"owner": "2336260",
+	"public": false,
+	"requests": [
+		{
+			"id": "7fb58a8d-d102-74d9-64c6-8c3c8c5cefd6",
+			"headers": "Authorization: [{\"key\":\"Authorization\",\"value\":\"Bearer {{token}}\",\"description\":\"\"}]\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "[{\"key\":\"Authorization\",\"value\":\"Bearer {{token}}\",\"description\":\"\"}]",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:60999/api/Agreement/CalculationPeriod",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1525293669572,
+			"name": "CalculationPeriod",
+			"description": "",
+			"collectionId": "e8d70edd-e943-2078-4768-b462965f77f6",
+			"responses": [],
+			"rawModeData": "{\n\t\"Id\" :  2,\n\t\"Period\" : \"2018-04-01\",\n\t\"BeginDate\" : \"2018-03-01\",\n\t\"EndDate\" : \"2018-04-01\"\n}"
+		},
+		{
+			"id": "a4562745-b8ca-02bb-6dfe-7ec5082f00bc",
+			"headers": "Authorization: Bearer {{token}}\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer {{token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:60999/api/Agreement",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "e8d70edd-e943-2078-4768-b462965f77f6",
+			"data": null,
+			"dataMode": "params",
+			"name": "AgreementAll",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1525116866476,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "3879f6cc-f1e5-5444-1f73-325dd3d9d79c"
+		},
+		{
+			"id": "c3be708e-8e51-2b38-64f7-7925e2bb1963",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:60999/api/Account/Register",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1525115970978,
+			"name": "Registration",
+			"description": "",
+			"collectionId": "e8d70edd-e943-2078-4768-b462965f77f6",
+			"responses": [],
+			"rawModeData": "{\r\n  \"Email\": \"pavel@karasov.net\",\r\n  \"Password\": \"test_Mega2\",\r\n  \"ConfirmPassword\": \"test_Mega2\"\r\n}"
+		},
+		{
+			"id": "e23497ac-0b62-6e58-878e-2853065842dc",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:60999/Token",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "pavel@karasov.net",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Password",
+					"value": "test_Mega2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": "var data = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"token\", data.access_token);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1525116761142,
+			"name": "GetToken",
+			"description": "",
+			"collectionId": "e8d70edd-e943-2078-4768-b462965f77f6",
+			"responses": []
+		}
+	]
+}
